@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DE2984A-DC33-46D0-BAA0-8A4FADA6AFB3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PolyMonRT.My.MyApplication</StartupObject>
+    <RootNamespace>PolyMonRT</RootNamespace>
+    <AssemblyName>PolyMonRT</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>Includes\Dashboard.ico</ApplicationIcon>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PolyMonRT.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PolyMonRT.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AGaugeApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>Includes\AGaugeApp.exe</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="PolyMonControls, Version=1.0.3189.10932, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PolyMonControls\bin\Release\PolyMonControls.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.1.4.31904, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Includes\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dlgDashboardStatus.Designer.vb">
+      <DependentUpon>dlgDashboardStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgDashboardStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgImpersonation.Designer.vb">
+      <DependentUpon>dlgImpersonation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgImpersonation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMonitorChartProperties.Designer.vb">
+      <DependentUpon>dlgMonitorChartProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMonitorChartProperties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modKeys.vb" />
+    <Compile Include="PolyMonSecurity.vb" />
+    <Compile Include="Interfaces.vb" />
+    <Compile Include="MonitorImplementations.vb" />
+    <Compile Include="PolyMonClasses.vb" />
+    <Compile Include="PolyMonGlobals.vb" />
+    <Compile Include="PolyMonTypes.vb" />
+    <Compile Include="frmMDIMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMDIMain.Designer.vb">
+      <DependentUpon>frmMDIMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonitorDashboard.Designer.vb">
+      <DependentUpon>frmMonitorDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMonitorDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ucCPUMonitor.Designer.vb">
+      <DependentUpon>ucCPUMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucCPUMonitor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucCylinderGauge.Designer.vb">
+      <DependentUpon>ucCylinderGauge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucCylinderGauge.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGauge.Designer.vb">
+      <DependentUpon>ucGauge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucGauge.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucLEDGauge.Designer.vb">
+      <DependentUpon>ucLEDGauge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucLEDGauge.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMonitorChart.Designer.vb">
+      <DependentUpon>ucMonitorChart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucMonitorChart.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPerfMonConfig.Designer.vb">
+      <DependentUpon>ucPerfMonConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucPerfMonConfig.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPingConfig.Designer.vb">
+      <DependentUpon>ucPingConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucPingConfig.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPowerShellConfig.Designer.vb">
+      <DependentUpon>ucPowerShellConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucPowerShellConfig.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSQLMonitorConfig.Designer.vb">
+      <DependentUpon>ucSQLMonitorConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucSQLMonitorConfig.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStatusLightSingle.Designer.vb">
+      <DependentUpon>ucStatusLightSingle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucStatusLightSingle.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dlgDashboardStatus.resx">
+      <DependentUpon>dlgDashboardStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgImpersonation.resx">
+      <DependentUpon>dlgImpersonation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMonitorChartProperties.resx">
+      <DependentUpon>dlgMonitorChartProperties.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMDIMain.resx">
+      <DependentUpon>frmMDIMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonitorDashboard.resx">
+      <DependentUpon>frmMonitorDashboard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucCPUMonitor.resx">
+      <DependentUpon>ucCPUMonitor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucCylinderGauge.resx">
+      <DependentUpon>ucCylinderGauge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGauge.resx">
+      <DependentUpon>ucGauge.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucLEDGauge.resx">
+      <DependentUpon>ucLEDGauge.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMonitorChart.resx">
+      <DependentUpon>ucMonitorChart.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPerfMonConfig.resx">
+      <DependentUpon>ucPerfMonConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPingConfig.resx">
+      <DependentUpon>ucPingConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPowerShellConfig.resx">
+      <DependentUpon>ucPowerShellConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSQLMonitorConfig.resx">
+      <DependentUpon>ucSQLMonitorConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStatusLightSingle.resx">
+      <DependentUpon>ucStatusLightSingle.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Dashboard.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Chart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SaveAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\NewMonitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\InfoSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\CloseSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\CloseSmall_WhtBck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\CloseSmall_WhtBckGrad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Stats.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Gear.png" />
+    <Content Include="Images\info.ico" />
+    <Content Include="Images\Minimize.png" />
+    <Content Include="Images\SecurityLock.ico" />
+    <Content Include="Images\TileHorizontal.png" />
+    <Content Include="Images\TileVertical.png" />
+    <Content Include="Includes\Dashboard.ico" />
+    <Content Include="Images\NewSmall.png" />
+    <None Include="Images\user.png" />
+    <None Include="Images\user.bmp" />
+    <None Include="Images\Options.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
